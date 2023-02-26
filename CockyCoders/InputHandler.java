@@ -1,20 +1,27 @@
-/*
- * Author: Alex
+package CockyCoders;
+/**
+ * @author Alex
  */
+
 import java.util.HashMap;
 
 public class InputHandler {
-    private HashMap<String, Integer> commands;
+    private HashMap<String, Command> commands;
+
     public InputHandler(StopWatch watch) {
-        commands = new HashMap<String, Integer>();
-        commands.put("1", 60);
-        commands.put("5", 300);
-        commands.put("30", 30);
+        commands = new HashMap<String, Command>();
+        commands.put("1", new OneMinCommand(watch));
+        commands.put("5", new FiveMinCommand(watch));
+        commands.put("30", new ThirtySecCommand(watch));
     }
-    public int inputEntered(String command) {
-        if(commands.containsKey(command)) {
-            return commands.get(command);
+
+    public boolean inputEntered(String key) {
+        Command command = commands.get(key);
+        if (command != null) {
+            command.execute();
+            return true;
+        } else {
+            return false;
         }
-        return 0;
     }
 }
