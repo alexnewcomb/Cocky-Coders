@@ -1,13 +1,17 @@
 package CockyCoders;
 
-/*
- * Author: Jose
+/**
+ * @author Jose
  */
 
 public class OneMinCommand implements Command {
+        
         private StopWatch watch;
 
-        //starting point 
+        /*
+         * execute method for One Minute command
+         * @param watch
+         */
         public OneMinCommand(StopWatch watch) {
                 this.watch = watch;
         }

@@ -1,13 +1,17 @@
 package CockyCoders;
 
 /*
- * Author: Jose
+ * @author Jose
  */
 
 public class FiveMinCommand implements Command {
+        
         private StopWatch watch;
 
-        //starting point
+        /*
+         * execute method for Five Minute command
+         * @param watch
+         */
         public FiveMinCommand(StopWatch watch) {
                 this.watch = watch;
         }
